@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 
 def getFilePath(filename, fileformat):
+	
 
 	# Ordnerstruktur des auführenden Systems einlesen
 	dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -153,7 +154,20 @@ def load_json(path):
 
 #Terminationskriterium ermittlen
 def examine_hr(subject_data, hr_peaks):
-
+""" 
+Testing for determination criteria:
+	Arguments:
+		subject_data: arranged age information
+		hr_peaks: filtered datapeaks from the ecg data
+	Returns:
+		termination: boolean with information to the tests termination
+		if not 
+		maximum_hr: highest pulse in dataset 
+		
+	subject_max_hr: calculates the subjects highest permitted heart rate
+"""
+		
+Testing for determination criteria
     maximum_hr = hr_peaks.max()
 
     subject_max_hr = 220 - (2022 - subject_data["birth_year"])
@@ -195,7 +209,7 @@ for j in json_file:
     #Zusammenfassung erstellen (Json-Objekt, Herzrate und Term.-Kriterium) und ausgeben
     summarize(subject_data, max_hr, term)
 
-
+3
 
 
 
@@ -208,7 +222,7 @@ def plot_power(power_data, subject_peak):
     peaks_downsampled = subject_peak[peaks.index % 1000 == 0]  
 
     peaks_downsampled = peaks_downsampled.reset_index(drop=True)
-    peaks_downsampled = peaks_downsampled.drop(["ECG_R_Peaks"],axis=1)
+    peaks_downsampl3ed = peaks_downsampled.drop(["ECG_R_Peaks"],axis=1)
 
     peaks_downsampled["Power (Watt)"] = pd.to_numeric(power_data_watts)
 
