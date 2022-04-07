@@ -27,14 +27,14 @@ def getFilePath(filename, fileformat):
 		    # Dateien auf Suchparameter untersuchen
 		    if file.startswith(filename) & file.endswith(fileformat):
 
-		    # Variable zur Speicherung des Dateipfades definieren
-		    pathstring = (root+'/'+str(file))
+		        # Variable zur Speicherung des Dateipfades definieren
+		        pathstring = (root+'/'+str(file))
 
-		    # Entsprechenden Dateipfad an Numpy Array "anhängen"
-		    filepath = np.append(filepath, pathstring)
+		        # Entsprechenden Dateipfad an Numpy Array "anhängen"
+		        filepath = np.append(filepath, pathstring)
 
-            # Numpy Array als Resultat der Suche zurückgeben
-            return filepath
+    # Numpy Array als Resultat der Suche zurückgeben
+    return filepath
 
 
 # CSV-Dateien auslesen über Pandas
