@@ -1,0 +1,19 @@
+2022-04-17 17:42:12,917 | INFO | Data of Subject 1 has been loaded
+2022-04-17 17:42:12,917 | INFO | Data of Subject 2 has been loaded
+2022-04-17 17:42:12,917 | INFO | Data of Subject 3 has been loaded
+2022-04-17 17:42:19,311 | INFO | Test of subject 1 has been marked as invalid because of 
+2022-04-17 17:42:20,482 | INFO | Test of subject 2 has been marked as invalid because of 
+2022-04-17 17:42:21,585 | INFO | Test of subject 3 has been marked as invalid because of 
+2022-04-17 17:42:47,107 | INFO | Test of subject 1 has been marked as invalid because of wrong number
+2022-04-17 17:42:51,627 | INFO | Test of subject 2 has been marked as invalid because of something else
+2022-04-17 17:42:52,713 | INFO | Test of subject 3 has been marked as invalid because of 
+2022-04-17 17:50:21,225 | INFO | Test of subject 1 has been marked as invalid because of 
+2022-04-17 17:50:23,526 | INFO | Test of subject 2 has been marked as invalid because of 
+2022-04-17 17:50:25,983 | INFO | Test of subject 3 has been marked as invalid because of asdf
+2022-04-17 17:50:57,328 | INFO | Test of subject 1 has been marked as invalid because of 
+2022-04-17 17:50:59,030 | INFO | Test of subject 2 has been marked as invalid because of 
+2022-04-17 17:51:00,500 | INFO | Test of subject 3 has been marked as invalid because of asdf
+2022-04-17 17:55:10,866 | INFO | Data of Subject 1 has been loaded
+2022-04-17 17:55:10,866 | INFO | Data of Subject 2 has been loaded
+2022-04-17 17:55:10,867 | INFO | Data of Subject 3 has been loaded
+2022-04-17 17:55:17,843 | INFO | Test of subject 2 has been marked as invalid because of asd

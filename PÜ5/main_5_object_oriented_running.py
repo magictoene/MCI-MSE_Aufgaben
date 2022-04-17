@@ -5,6 +5,7 @@ import pandas as pd
 import neurokit2 as nk
 import json
 
+
 # %%
 # Definition of Classes
 
@@ -37,6 +38,7 @@ class Subject():
         self.subject_max_hr = 220 - (2022 - __subject_data["birth_year"])
         self.subject_id = __subject_data["subject_id"]
         self.test_power_w = __subject_data["test_power_w"]
+
 
 class PowerData():
     """
@@ -161,8 +163,12 @@ class Test:
         self.manual_termination = False
         self.manual_termination = input("Is this test invalid? (leave blank if valid): ")
 
-        if self.manual_termination != False:
+        if self.manual_termination != '':
             self.termination = True
+            # Log message for invalid test of subject xyz
+            log.info('Test of subject %s has been marked as invalid because of %s', self.subject_id, self.manual_termination )
+        
+        self.manual_termination = False
         
 
     def create_plot(self):
@@ -215,6 +221,15 @@ import os
 from re import I
 import pandas as pd
 
+## importing logging package to use log methods #Aufgabe 4-3
+import logging as log 
+
+
+## Log config for logging subject #Aufgabe 4-3
+log.basicConfig(filename='program.log', 
+                filemode='a', 
+                level=log.INFO, format='%(asctime)s | %(levelname)s | %(message)s')
+
 ## Import statistics package for calculation of HR variance: Aufgabe 4.2
 import statistics as stats
 
@@ -228,6 +243,8 @@ for file in os.listdir(folder_input_data):
 
     if file.endswith(".json"):
         list_of_subjects.append(Subject(file_name))
+        # Log message for loading and adding a subject to the list #Aufgabe 4-3
+        log.info('Data of Subject %s has been loaded', file_name.split(".")[0][-1])
 
     if file.endswith(".txt"):
         list_of_power_data.append(PowerData(file_name))
