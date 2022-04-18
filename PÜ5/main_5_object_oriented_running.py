@@ -4,6 +4,7 @@
 import pandas as pd
 import neurokit2 as nk
 import json
+import matplotlib.pyplot as plt
 
 
 # %%
@@ -180,7 +181,20 @@ class Test:
         self.plot_data = self.plot_data.reset_index(drop=True)
 
         self.plot_data["Power (Watt)"] = pd.to_numeric(self.power_data.power_data_watts)
-        self.plot_data.plot()
+        #self.plot_data.plot()
+
+        # Creating single figure for each test object to plot
+        plt.figure(self.subject_id)
+        # plot dataset
+        plt.plot(self.plot_data)
+
+        # Plot description
+        plt.xlabel("Time [s]") # Set xlabel as Time in seconds
+        plt.title("Heartrate history subject " + str(self.subject_id)) # Set title as heartrate history by subject
+        plt.legend(["Heart Rate", "Power (Watt)"]) # Set legend as Heart Rate and Power (Watt)
+ 
+        # Saving the figure to result_data as a png
+        plt.savefig('result_data/new_figure_' + str(self.subject_id) + '.png')
     
 
     def save_data(self):
@@ -267,6 +281,7 @@ for test in list_of_new_tests:                      # Alle Tests werden nacheina
     test.save_data()                                # Save the test object as a json object
 
     iterator += 1
+
 
 
 # %%
