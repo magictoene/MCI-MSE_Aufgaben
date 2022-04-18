@@ -86,6 +86,7 @@ class Test:
         self.subject_id = file_name.split(".")[0][-1]
         self.ecg_data = pd.read_csv(file_name)
         self.manual_termination = False
+        self.figure_path = None
 
     def create_hr_data(self):
         """
@@ -194,19 +195,51 @@ class Test:
         plt.legend(["Heart Rate", "Power (Watt)"]) # Set legend as Heart Rate and Power (Watt)
  
         # Saving the figure to result_data as a png
-        plt.savefig('result_data/new_figure_' + str(self.subject_id) + '.png')
+        figure_path = 'result_data/new_figure_' + str(self.subject_id) + '.png'
+        self.figure_path = figure_path
+        plt.savefig(figure_path)
     
+
+    #def save_data(self):
+    #    """
+    #    Store the test data in a JSON file
+    #    """
+    #    __data = {"User ID": self.subject_id, 
+    #              "Reason for test termation": self.manual_termination, 
+    #              "Average Heart Rate": self.average_hr_test, 
+    #              "Maximum Heart Rate": self.maximum_hr, 
+    #              "Test Length (s)": self.power_data.duration_s, 
+    #              "Test Power (W)": self.subject.test_power_w}
+
+    #    __folder_current = os.path.dirname(__file__) 
+    #    __folder_input_data = os.path.join(__folder_current, 'result_data')
+    #    
+    #    __file_name = 'result_data_subject' + str(self.subject_id) +'.json'
+    #    __results_file = os.path.join(__folder_input_data, __file_name)
+
+    #    with open(__results_file, 'w', encoding='utf-8') as f:
+    #        json.dump(__data, f, ensure_ascii=False, indent=4)
+
 
     def save_data(self):
         """
         Store the test data in a JSON file
         """
-        __data = {"User ID": self.subject_id, 
-                  "Reason for test termation": self.manual_termination, 
-                  "Average Heart Rate": self.average_hr_test, 
-                  "Maximum Heart Rate": self.maximum_hr, 
-                  "Test Length (s)": self.power_data.duration_s, 
-                  "Test Power (W)": self.subject.test_power_w}
+
+        test_id = "Test " + self.subject_id
+        
+        __data ={test_id: 
+                            {"User ID": self.subject_id, 
+                             "Reason for test termation": self.manual_termination, 
+                             "Average Heart Rate": self.average_hr_test, 
+                             "Maximum Heart Rate": self.maximum_hr, 
+                             "Test Length (s)": self.power_data.duration_s, 
+                             "Test Power (W)": self.subject.test_power_w
+                            },
+                 "Figure Path": self.figure_path
+                }       
+                            
+                        
 
         __folder_current = os.path.dirname(__file__) 
         __folder_input_data = os.path.join(__folder_current, 'result_data')
@@ -264,6 +297,8 @@ for file in os.listdir(folder_input_data):
         list_of_power_data.append(PowerData(file_name))
 
 
+log.info('%d files have been loaded completely.', len(list_of_power_data)) 
+
 # %% Programmablauf
 
 iterator = 0                                        # Zähler, der die gefundenen Dateien und damit Tests zählt
@@ -281,7 +316,3 @@ for test in list_of_new_tests:                      # Alle Tests werden nacheina
     test.save_data()                                # Save the test object as a json object
 
     iterator += 1
-
-
-
-# %%

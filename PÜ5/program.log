@@ -71,3 +71,7 @@
 2022-04-18 15:08:53,165 | INFO | Data of Subject 2 has been loaded
 2022-04-18 15:08:53,165 | INFO | Data of Subject 3 has been loaded
 2022-04-18 15:09:07,000 | INFO | Test of subject 2 has been marked as invalid because of 745
+2022-04-18 23:34:46,546 | INFO | Data of Subject 1 has been loaded
+2022-04-18 23:34:46,558 | INFO | Data of Subject 2 has been loaded
+2022-04-18 23:34:46,559 | INFO | Data of Subject 3 has been loaded
+2022-04-18 23:34:46,560 | INFO | 3 files have been loaded completely.
