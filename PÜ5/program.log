@@ -1,0 +1,77 @@
+2022-04-17 17:42:12,917 | INFO | Data of Subject 1 has been loaded
+2022-04-17 17:42:12,917 | INFO | Data of Subject 2 has been loaded
+2022-04-17 17:42:12,917 | INFO | Data of Subject 3 has been loaded
+2022-04-17 17:42:19,311 | INFO | Test of subject 1 has been marked as invalid because of 
+2022-04-17 17:42:20,482 | INFO | Test of subject 2 has been marked as invalid because of 
+2022-04-17 17:42:21,585 | INFO | Test of subject 3 has been marked as invalid because of 
+2022-04-17 17:42:47,107 | INFO | Test of subject 1 has been marked as invalid because of wrong number
+2022-04-17 17:42:51,627 | INFO | Test of subject 2 has been marked as invalid because of something else
+2022-04-17 17:42:52,713 | INFO | Test of subject 3 has been marked as invalid because of 
+2022-04-17 17:50:21,225 | INFO | Test of subject 1 has been marked as invalid because of 
+2022-04-17 17:50:23,526 | INFO | Test of subject 2 has been marked as invalid because of 
+2022-04-17 17:50:25,983 | INFO | Test of subject 3 has been marked as invalid because of asdf
+2022-04-17 17:50:57,328 | INFO | Test of subject 1 has been marked as invalid because of 
+2022-04-17 17:50:59,030 | INFO | Test of subject 2 has been marked as invalid because of 
+2022-04-17 17:51:00,500 | INFO | Test of subject 3 has been marked as invalid because of asdf
+2022-04-17 17:55:10,866 | INFO | Data of Subject 1 has been loaded
+2022-04-17 17:55:10,866 | INFO | Data of Subject 2 has been loaded
+2022-04-17 17:55:10,867 | INFO | Data of Subject 3 has been loaded
+2022-04-17 17:55:17,843 | INFO | Test of subject 2 has been marked as invalid because of asd
+2022-04-18 13:44:45,271 | INFO | Data of Subject 1 has been loaded
+2022-04-18 13:44:45,272 | INFO | Data of Subject 2 has been loaded
+2022-04-18 13:44:45,272 | INFO | Data of Subject 3 has been loaded
+2022-04-18 13:44:48,787 | INFO | Test of subject 1 has been marked as invalid because of ölkj
+2022-04-18 13:44:52,731 | INFO | Test of subject 3 has been marked as invalid because of h
+2022-04-18 14:14:52,779 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:14:52,780 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:14:52,780 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:17:04,912 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:17:04,913 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:17:04,923 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:18:33,704 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:18:33,704 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:18:33,705 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:21:44,458 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:21:44,458 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:21:44,458 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:29:20,196 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:29:20,197 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:29:20,197 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:29:26,705 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:29:33,905 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:29:36,061 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:30:54,989 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:30:56,953 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:30:58,229 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:32:31,013 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:32:31,015 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:32:31,017 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:42:06,236 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:42:06,237 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:42:06,237 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:42:09,509 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:42:12,100 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:42:26,031 | WARNING | No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+2022-04-18 14:48:50,456 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:48:50,457 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:48:50,457 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:52:23,882 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:52:23,888 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:52:23,891 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:53:32,566 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:53:32,566 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:53:32,566 | INFO | Data of Subject 3 has been loaded
+2022-04-18 14:59:35,612 | INFO | Data of Subject 1 has been loaded
+2022-04-18 14:59:35,613 | INFO | Data of Subject 2 has been loaded
+2022-04-18 14:59:35,619 | INFO | Data of Subject 3 has been loaded
+2022-04-18 15:06:39,903 | INFO | Data of Subject 1 has been loaded
+2022-04-18 15:06:39,903 | INFO | Data of Subject 2 has been loaded
+2022-04-18 15:06:39,904 | INFO | Data of Subject 3 has been loaded
+2022-04-18 15:08:53,164 | INFO | Data of Subject 1 has been loaded
+2022-04-18 15:08:53,165 | INFO | Data of Subject 2 has been loaded
+2022-04-18 15:08:53,165 | INFO | Data of Subject 3 has been loaded
+2022-04-18 15:09:07,000 | INFO | Test of subject 2 has been marked as invalid because of 745
+2022-04-18 23:34:46,546 | INFO | Data of Subject 1 has been loaded
+2022-04-18 23:34:46,558 | INFO | Data of Subject 2 has been loaded
+2022-04-18 23:34:46,559 | INFO | Data of Subject 3 has been loaded
+2022-04-18 23:34:46,560 | INFO | 3 files have been loaded completely.

@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 
 def getFilePath(filename, fileformat):
-	
+
     # Ordnerstruktur des auführenden Systems einlesen
     dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -21,17 +21,16 @@ def getFilePath(filename, fileformat):
     # Schleife zum Durchlaufen der Ordnerstruktur
     for root, dirs, files in os.walk(dir_path):
 
-	    # Schleife zum Vergleich jeder einzelnen Datei mit dem Suchparameter
-	    for file in files:
+        # Schleife zum Vergleich jeder einzelnen Datei mit dem Suchparameter
+        for file in files:
 
-		    # Dateien auf Suchparameter untersuchen
-		    if file.startswith(filename) & file.endswith(fileformat):
+            # Dateien auf Suchparameter untersuchen
+            if file.startswith(filename) & file.endswith(fileformat):
 
-		        # Variable zur Speicherung des Dateipfades definieren
-		        pathstring = (root+'/'+str(file))
-
-		        # Entsprechenden Dateipfad an Numpy Array "anhängen"
-		        filepath = np.append(filepath, pathstring)
+                # Variable zur Speicherung des Dateipfades definieren
+                pathstring = (root+'/'+str(file))
+                # Entsprechenden Dateipfad an Numpy Array "anhängen"
+                filepath = np.append(filepath, pathstring)
 
     # Numpy Array als Resultat der Suche zurückgeben
     return filepath

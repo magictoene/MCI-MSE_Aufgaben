@@ -4,6 +4,8 @@
 import pandas as pd
 import neurokit2 as nk
 import json
+import matplotlib.pyplot as plt
+
 
 # %%
 # Definition of Classes
@@ -37,6 +39,7 @@ class Subject():
         self.subject_max_hr = 220 - (2022 - __subject_data["birth_year"])
         self.subject_id = __subject_data["subject_id"]
         self.test_power_w = __subject_data["test_power_w"]
+
 
 class PowerData():
     """
@@ -83,6 +86,7 @@ class Test:
         self.subject_id = file_name.split(".")[0][-1]
         self.ecg_data = pd.read_csv(file_name)
         self.manual_termination = False
+        self.figure_path = None
 
     def create_hr_data(self):
         """
@@ -161,8 +165,12 @@ class Test:
         self.manual_termination = False
         self.manual_termination = input("Is this test invalid? (leave blank if valid): ")
 
-        if self.manual_termination != False:
+        if self.manual_termination != '':
             self.termination = True
+            # Log message for invalid test of subject xyz
+            log.info('Test of subject %s has been marked as invalid because of %s', self.subject_id, self.manual_termination )
+        
+        self.manual_termination = False
         
 
     def create_plot(self):
@@ -174,19 +182,64 @@ class Test:
         self.plot_data = self.plot_data.reset_index(drop=True)
 
         self.plot_data["Power (Watt)"] = pd.to_numeric(self.power_data.power_data_watts)
-        self.plot_data.plot()
+        #self.plot_data.plot()
+
+        # Creating single figure for each test object to plot
+        plt.figure(self.subject_id)
+        # plot dataset
+        plt.plot(self.plot_data)
+
+        # Plot description
+        plt.xlabel("Time [s]") # Set xlabel as Time in seconds
+        plt.title("Heartrate history subject " + str(self.subject_id)) # Set title as heartrate history by subject
+        plt.legend(["Heart Rate", "Power (Watt)"]) # Set legend as Heart Rate and Power (Watt)
+ 
+        # Saving the figure to result_data as a png
+        figure_path = 'result_data/new_figure_' + str(self.subject_id) + '.png'
+        self.figure_path = figure_path
+        plt.savefig(figure_path)
     
+
+    #def save_data(self):
+    #    """
+    #    Store the test data in a JSON file
+    #    """
+    #    __data = {"User ID": self.subject_id, 
+    #              "Reason for test termation": self.manual_termination, 
+    #              "Average Heart Rate": self.average_hr_test, 
+    #              "Maximum Heart Rate": self.maximum_hr, 
+    #              "Test Length (s)": self.power_data.duration_s, 
+    #              "Test Power (W)": self.subject.test_power_w}
+
+    #    __folder_current = os.path.dirname(__file__) 
+    #    __folder_input_data = os.path.join(__folder_current, 'result_data')
+    #    
+    #    __file_name = 'result_data_subject' + str(self.subject_id) +'.json'
+    #    __results_file = os.path.join(__folder_input_data, __file_name)
+
+    #    with open(__results_file, 'w', encoding='utf-8') as f:
+    #        json.dump(__data, f, ensure_ascii=False, indent=4)
+
 
     def save_data(self):
         """
         Store the test data in a JSON file
         """
-        __data = {"User ID": self.subject_id, 
-                  "Reason for test termation": self.manual_termination, 
-                  "Average Heart Rate": self.average_hr_test, 
-                  "Maximum Heart Rate": self.maximum_hr, 
-                  "Test Length (s)": self.power_data.duration_s, 
-                  "Test Power (W)": self.subject.test_power_w}
+
+        test_id = "Test " + self.subject_id
+        
+        __data ={test_id: 
+                            {"User ID": self.subject_id, 
+                             "Reason for test termation": self.manual_termination, 
+                             "Average Heart Rate": self.average_hr_test, 
+                             "Maximum Heart Rate": self.maximum_hr, 
+                             "Test Length (s)": self.power_data.duration_s, 
+                             "Test Power (W)": self.subject.test_power_w
+                            },
+                 "Figure Path": self.figure_path
+                }       
+                            
+                        
 
         __folder_current = os.path.dirname(__file__) 
         __folder_input_data = os.path.join(__folder_current, 'result_data')
@@ -215,6 +268,15 @@ import os
 from re import I
 import pandas as pd
 
+## importing logging package to use log methods #Aufgabe 4-3
+import logging as log 
+
+
+## Log config for logging subject #Aufgabe 4-3
+log.basicConfig(filename='program.log', 
+                filemode='a', 
+                level=log.INFO, format='%(asctime)s | %(levelname)s | %(message)s')
+
 ## Import statistics package for calculation of HR variance: Aufgabe 4.2
 import statistics as stats
 
@@ -228,10 +290,14 @@ for file in os.listdir(folder_input_data):
 
     if file.endswith(".json"):
         list_of_subjects.append(Subject(file_name))
+        # Log message for loading and adding a subject to the list #Aufgabe 4-3
+        log.info('Data of Subject %s has been loaded', file_name.split(".")[0][-1])
 
     if file.endswith(".txt"):
         list_of_power_data.append(PowerData(file_name))
 
+
+log.info('%d files have been loaded completely.', len(list_of_power_data)) 
 
 # %% Programmablauf
 
@@ -250,6 +316,3 @@ for test in list_of_new_tests:                      # Alle Tests werden nacheina
     test.save_data()                                # Save the test object as a json object
 
     iterator += 1
-
-
-# %%
