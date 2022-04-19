@@ -30,3 +30,16 @@ Daten müssen wie wie folgt vorliegen?
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+# Bewertung der Aufgaben
+
+| Aufgabe       | 1.1. | 1.2. | 2.1. | 2.2. | 3 | 2.1. | 2.2. | 2.3. | 3.1 | 3.2 | 4.1 | 4.2 | 5.1 | 5.2 | 5.3 | 5.4 |
+|---------------|------|------|------|------|---|------|------|------|-----|-----|-----|-----|-----|-----|-----|-----|
+| Gesamtpunkte  | 1    | 2    | 3    | 4    | 0 | 3    | 3    | 3    | 3   | 3   | 2   | 3   | 2   | 3   | 3   | 2   | 
+| Punkte bisher | 1    | 2    | 2,25 | 3,4  | 0 | 2,7  | 2,7  | 3    | 3   | 5   | 1,8 | 2,1 | 2   | 3   | 0   | 1,8 |
+
+5.1 und 5.3 müssen nochmal besprochen werden!
+
+max. Punktzahl: 40
+erreichte Punktzahl: 35,75 -> ~89%
+
